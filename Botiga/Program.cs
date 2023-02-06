@@ -3,9 +3,9 @@
     private static void Main(string[] args)
     {
         //variables Botiga
-        string[] productesBotiga = {"Pera", "Yogur", "Pastanaga", "Patata", "Melón"};
-        double[] preus = {10, 12, 14, 15, 25, 132, 2, 3};
-        int nElementsBotiga = 3;
+        int nElementsBotiga = 1, espais = 1;
+        string[] productesBotiga = new string[espais];
+        double[] preus = new double[espais];
 
         //variables Cistella
         string[] productesCistella;
@@ -20,7 +20,14 @@
     {
 
     }
-
+    //ampliar tenda
+    public static int AmpliarTenda(int total)
+    {
+        Console.WriteLine("Quants espais vols afegir a la tenda?");
+        int num = int.Parse(Console.ReadLine());
+        total += num;
+        return total;
+    }
     //mostrar els productes de la botiga
     public static void Mostrar(int nElem, string[] productes, double[] preus)
     {
