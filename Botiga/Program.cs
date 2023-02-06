@@ -61,4 +61,26 @@
             Thread.Sleep(3000);
         }
     }
+    //modificar producte
+    public static void ModificarProducte(string prodAntic, string nom, string[] productes, int nElements)
+    {
+        //troba la posicio a partir del producte
+        bool trobat = false;
+        for (int i = 0; i < nElements; i++)
+        {
+            if (productes[i] == prodAntic)
+            {
+                //si troba el producte li canvia el nom
+                trobat = true;
+                productes[i] = nom;
+                Console.WriteLine("Producte modificat correctament!!");
+                Thread.Sleep(3000);
+            }
+        }
+        if(!trobat)  //si no troba el producte
+        {
+            Console.WriteLine("Producte no trobat...");
+            Thread.Sleep(3000);
+        }
+    }
 }
