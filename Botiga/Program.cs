@@ -38,4 +38,27 @@
         }
         Console.WriteLine("-----------------------------------------");
     }
+    //modificar preu
+    public static void ModificarPreu(string producte, double preu, string[]productes, double[]preus, int nElements)
+    {
+        //troba la posicio a partir del producte
+        int posicio = -1;
+        for(int i = 0; i < nElements; i++) 
+        {
+            if (productes[i] == producte)
+                posicio = i;
+        }
+        if (posicio > 0)  //si troba el producte
+        {
+            //modifica el preu del producte
+            preus[posicio] = preu;
+            Console.WriteLine("Preu modificat correctament!!");
+            Thread.Sleep(3000);
+        }
+        else  //si no troba el producte
+        {
+            Console.WriteLine("Producte no trobat...");
+            Thread.Sleep(3000);
+        }
+    }
 }
