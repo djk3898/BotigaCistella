@@ -13,7 +13,36 @@
         int nElementsCistella;
         double diners;
 
-        Mostrar(nElementsBotiga, productesBotiga, preus);
+        Console.WriteLine("Indica\n1.\t2.\t3.\t4.");
+        int seleccio = int.Parse(Console.ReadLine());
+
+        switch (seleccio)
+        {
+            case 1:
+                Mostrar(nElementsBotiga, productesBotiga, preus);
+                break;
+            case 2:
+                Console.WriteLine("abans: " + espais);
+                espais = AmpliarTenda(espais);
+                Console.WriteLine("després: " + espais);
+                break;
+            case 3:
+                Console.WriteLine("MODIFICA PREU");
+                Console.Write("Indica el producte: ");
+                string producte = Console.ReadLine();
+                Console.Write("Indica el nou preu: ");
+                int preu = int.Parse(Console.ReadLine());
+                ModificarPreu(producte, preu, productesBotiga, preus, nElementsBotiga);
+                break;
+            case 4:
+                Console.WriteLine("MODIFICA PRODUCTE");
+                Console.Write("Indica el producte: ");
+                producte = Console.ReadLine();
+                Console.Write("Indica el nou producte: ");
+                string prodNou = Console.ReadLine();
+                ModificarProducte(producte, prodNou, productesBotiga, nElementsBotiga);
+                break;
+        }
     }
     //afegir productes
     public static void AfegirProducte(string producte, double preu)
@@ -83,4 +112,4 @@
             Thread.Sleep(3000);
         }
     }
-}
+} 
