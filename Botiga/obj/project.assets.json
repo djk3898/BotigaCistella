@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\djunca\\source\\repos\\BotigaCistella\\Botiga\\Botiga.csproj",
+      "projectUniqueName": "C:\\Users\\djunca\\source\\BotigaCistella\\Botiga\\Botiga.csproj",
       "projectName": "Botiga",
-      "projectPath": "C:\\Users\\djunca\\source\\repos\\BotigaCistella\\Botiga\\Botiga.csproj",
+      "projectPath": "C:\\Users\\djunca\\source\\BotigaCistella\\Botiga\\Botiga.csproj",
       "packagesPath": "C:\\Users\\djunca\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\djunca\\source\\repos\\BotigaCistella\\Botiga\\obj\\",
+      "outputPath": "C:\\Users\\djunca\\source\\BotigaCistella\\Botiga\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\djunca\\AppData\\Roaming\\NuGet\\NuGet.Config",
