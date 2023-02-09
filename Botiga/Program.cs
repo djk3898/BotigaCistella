@@ -13,39 +13,81 @@
         int nElementsCistella;
         double diners;
 
-        Console.WriteLine("Indica\n1.\t2.\t3.\t4.\t5.\t6.\t7.\t8.\t9.\t10.\t11.\t12.");
-        int seleccio = int.Parse(Console.ReadLine());
+        int seleccio = -1;
 
-        switch (seleccio)
+        do
         {
-            case 1:
-                Mostrar(nElementsBotiga, productesBotiga, preus);
-                break;
-            case 2:
-                Console.WriteLine("abans: " + espais);
-                espais = AmpliarTenda(espais);
-                Console.WriteLine("després: " + espais);
-                break;
-            case 3:
-                Console.WriteLine("MODIFICA PREU");
-                Console.Write("Indica el producte: ");
-                string producte = Console.ReadLine();
-                Console.Write("Indica el nou preu: ");
-                int preu = int.Parse(Console.ReadLine());
-                ModificarPreu(producte, preu, productesBotiga, preus, nElementsBotiga);
-                break;
-            case 4:
-                Console.WriteLine("MODIFICA PRODUCTE");
-                Console.Write("Indica el producte: ");
-                producte = Console.ReadLine();
-                Console.Write("Indica el nou producte: ");
-                string prodNou = Console.ReadLine();
-                ModificarProducte(producte, prodNou, productesBotiga, nElementsBotiga);
-                break;
-            case 12:
-                ToString(nElementsBotiga, productesBotiga, preus);
-                break;
+            Console.Clear();
+            Menu();
+            //Pinta(">", 2, 8);
+            Console.SetCursorPosition(0,1);
+            seleccio = int.Parse(Console.ReadLine());
+            Console.Clear();
+            switch (seleccio)
+            {
+                case 1:
+                    Mostrar(nElementsBotiga, productesBotiga, preus);
+                    Console.WriteLine("\nPrem enter per tornat al menú");
+                    Console.ReadLine();
+                    break;
+                case 2:
+                    Console.WriteLine("abans: " + espais);
+                    espais = AmpliarTenda(espais);
+                    Console.WriteLine("després: " + espais);
+                    Console.WriteLine("\nPrem enter per tornat al menú");
+                    Console.ReadLine();
+                    break;
+                case 3:
+                    Console.WriteLine("MODIFICA PREU");
+                    Console.Write("Indica el producte: ");
+                    string producte = Console.ReadLine();
+                    Console.Write("Indica el nou preu: ");
+                    int preu = int.Parse(Console.ReadLine());
+                    ModificarPreu(producte, preu, productesBotiga, preus, nElementsBotiga);
+                    break;
+                case 4:
+                    Console.WriteLine("MODIFICA PRODUCTE");
+                    Console.Write("Indica el producte: ");
+                    producte = Console.ReadLine();
+                    Console.Write("Indica el nou producte: ");
+                    string prodNou = Console.ReadLine();
+                    ModificarProducte(producte, prodNou, productesBotiga, nElementsBotiga);
+                    break;
+                case 12:
+                    ToString(nElementsBotiga, productesBotiga, preus);
+                    Console.WriteLine("\nPrem enter per tornat al menú");
+                    Console.ReadLine();
+                    break;
+                case -1:
+                    break;
+            }
+        } while (seleccio != -1);
+    }
+    //menu
+    public static void Pinta(string line, int x, int y)
+    {
+        Console.SetCursorPosition(x, y);
+        Console.Write(line);
+    }
+    public static void Menu()
+    {
+        //menú
+        for (int i = 0; i != 11; i++)
+        {
+            //titulo
+            Pinta("*********************", 4, 4);
+            Pinta("*       BOTIGA      *", 4, 5);
+            Pinta("*********************", 4, 6);
+            //menú
+            Pinta("1. Mostrar Productes", 4, 8);
+            Pinta("2. Ampliar Botiga", 4, 9);
+            Pinta("3. Modificar Preu", 4, 10);
+            Pinta("4. Modificar Producte", 4, 11);
+
+            Pinta("12. ToString", 4, 12);
+            Pinta("-1. Sortir", 4, 13);
         }
+
     }
     //afegir productes
     public static void AfegirProducte(string producte, double preu)
