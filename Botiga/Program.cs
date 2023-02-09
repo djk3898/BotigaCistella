@@ -13,7 +13,7 @@
         int nElementsCistella;
         double diners;
 
-        Console.WriteLine("Indica\n1.\t2.\t3.\t4.");
+        Console.WriteLine("Indica\n1.\t2.\t3.\t4.\t5.\t6.\t7.\t8.\t9.\t10.\t11.\t12.");
         int seleccio = int.Parse(Console.ReadLine());
 
         switch (seleccio)
@@ -42,6 +42,9 @@
                 string prodNou = Console.ReadLine();
                 ModificarProducte(producte, prodNou, productesBotiga, nElementsBotiga);
                 break;
+            case 12:
+                ToString(nElementsBotiga, productesBotiga, preus);
+                break;
         }
     }
     //afegir productes
@@ -60,12 +63,24 @@
     //mostrar els productes de la botiga
     public static void Mostrar(int nElem, string[] productes, double[] preus)
     {
+        Console.WriteLine("               PRODUCTES");
         for (int i = 0; i < nElem; i++)
         {
             Console.WriteLine("-----------------------------------------");
             Console.WriteLine(productes[i] + "\t" + preus[i] + "€");
         }
         Console.WriteLine("-----------------------------------------");
+    }
+    public static void ToString(int nElem, string[] productes, double[] preus)
+    {
+        Console.WriteLine("               PRODUCTES");
+        for (int i = 0; i < nElem; i++)
+        {
+            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine(productes[i] + "\t" + preus[i] + "€");
+        }
+        Console.WriteLine("-----------------------------------------");
+        Console.WriteLine("TOTAL: " + nElem + "\tEspais disponibles: " + (productes.Length - nElem));
     }
     //modificar preu
     public static void ModificarPreu(string producte, double preu, string[]productes, double[]preus, int nElements)
