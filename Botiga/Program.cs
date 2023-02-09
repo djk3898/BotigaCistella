@@ -92,7 +92,36 @@
     //afegir productes
     public static void AfegirProducte(string producte, double preu)
     {
+        int ampliar, i = 0;
+        char resposta = ' ';
+        Console.WriteLine("Quant productes vol afegir?");
+        ampliar = Convert.ToInt32(Console.ReadLine);
+        AmpliarTenda(ampliar);
+        do
+        {
+            Console.WriteLine("Producte que vols afegir");
+            producte = Console.ReadLine();
+            Console.WriteLine("Preu del producte");
+            preu = Convert.ToDouble(Console.ReadLine());
+            Console.Clear();
+        }
+        while (i < ampliar);
+    }
+    //afegirProducte
+    public static void AfegirProducte(string[] productes, double[] preu)
+    {
+        int i = productes.Length, produc;
 
+        Console.WriteLine("Quants productes vols afegir?");
+        produc = Convert.ToInt32(Console.ReadLine());
+        while (i < productes.Length + produc)
+        {
+            Console.WriteLine("Escriu producte");
+            productes[i] = Console.ReadLine();
+            Console.WriteLine("Escriu el preu");
+            preu[i] = Convert.ToDouble(Console.ReadLine());
+            i++;
+        }
     }
     //ampliar tenda
     public static int AmpliarTenda(int total)
@@ -169,4 +198,5 @@
             Thread.Sleep(3000);
         }
     }
+    public static void ordernarProducte()
 } 

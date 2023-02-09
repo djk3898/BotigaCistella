@@ -8,19 +8,27 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\djunca\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\djunca\\source\\BotigaCistella\\Botiga\\Botiga.csproj",
       "projectName": "Botiga",
       "projectPath": "C:\\Users\\djunca\\source\\BotigaCistella\\Botiga\\Botiga.csproj",
       "packagesPath": "C:\\Users\\djunca\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\djunca\\source\\BotigaCistella\\Botiga\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\PC\\Documents\\botiga\\BotigaCistella\\Botiga\\Botiga.csproj",
+      "projectName": "Botiga",
+      "projectPath": "C:\\Users\\PC\\Documents\\botiga\\BotigaCistella\\Botiga\\Botiga.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC\\Documents\\botiga\\BotigaCistella\\Botiga\\obj\\",
+>>>>>>> ad1c3e907cc4853f4d802d8a0e55105204d1b801
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\djunca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +69,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

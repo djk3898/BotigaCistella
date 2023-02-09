@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "3OgM8lprc71MOjOL0YhXaIa3z+dEhjkdh0lT0vuFoqhVZGZQxlJ7vjwclw0Fx8o7eRoHMOhhXAQXLgFaXl3ykA==",
   "success": true,
   "projectFilePath": "C:\\Users\\djunca\\source\\BotigaCistella\\Botiga\\Botiga.csproj",
+=======
+  "dgSpecHash": "+gXmYg9azLG8f1na/NLvgyJm73kBqIVFXm39w7431MYrcb8nrMGxQhrrveh7IRJlaQUCrp9i6X9olV08GFtYTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PC\\Documents\\botiga\\BotigaCistella\\Botiga\\Botiga.csproj",
+>>>>>>> ad1c3e907cc4853f4d802d8a0e55105204d1b801
   "expectedPackageFiles": [],
   "logs": []
 }
