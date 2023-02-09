@@ -199,4 +199,35 @@
         }
     }
     public static void ordernarProducte()
+    {
+
+    }
+
+    //comprova producte
+    public static bool ComprovaProducte(string producte, string[]productes, int nElem)
+    {
+        bool trobat = false;
+        for(int i = 0; i < nElem - 1; i++)
+        {
+            if (productes[i] == producte)
+                trobat = true;
+        }
+        return trobat;
+    }
+    //comprar productes
+    public static bool ComprarProducte(string producte, int quantitat, string[]cistella, int nElements, int[]quantitatCistella)
+    {
+        bool comprat = false;
+        //comprova producte
+        if (ComprovaProducte(producte, cistella, nElements))
+        {
+
+            comprat = true;
+        }
+        else
+            Console.WriteLine($"No hi ha {producte} a la botiga.");
+        return comprat;
+    }
+    //mostrar tiquet
+
 } 
