@@ -216,7 +216,7 @@
             Thread.Sleep(3000);
         }
     }
-    public static void ordernarProducte()
+    public static void OrdernarProducte()
     {
 
     }
