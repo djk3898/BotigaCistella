@@ -71,6 +71,11 @@
                     int numProductes = int.Parse(Console.ReadLine());
                     ComprarProducte(producte, numProductes, diners, productesCistella, nElementsCistella, quantitat, productesBotiga, nElementsBotiga, preus);
                     break;
+                case 11:
+                    MostraTiquet(nElementsCistella, productesCistella, quantitat, productesBotiga, preus, nElementsBotiga);
+                    Console.WriteLine("\nPrem enter per tornat al menú");
+                    Console.ReadLine();
+                    break;
                 case -1:
                     break;
             }
@@ -102,8 +107,9 @@
             Pinta("*      CSITELLA     *", 4, 17);
             Pinta("*********************", 4, 18);
             Pinta("9. Comprar Producte", 4, 19);
-            
-            Pinta("-1. Sortir", 4, 21);
+            Pinta("11. Tiquet", 4, 21);
+            Pinta("12. ToString(Tiquet)", 4, 22);
+            Pinta("-1. Sortir", 4, 23);
         }
 
     }
@@ -287,5 +293,32 @@
         Thread.Sleep( 1000 );
     }
     //mostrar tiquet
+    public static void MostraTiquet(int nElem, string[] productes, int[] quantitat, string[] productesBotiga, double[] preus, int nElemBotiga)
+    {
+        double preuUnitari = 0, preuTotal = 0.0;
+        string producte;
 
-} 
+        Console.WriteLine("                TIQUET");
+        for (int i = 0; i < nElem; i++)
+        {
+            //troba producte
+            producte = productes[i];
+            //troba preu unitari
+            for (int j = 0; j < nElemBotiga; j++)
+            {
+                if (productesBotiga[j] == producte)
+                    preuUnitari = preus[j];
+            }
+
+            Console.WriteLine("----------------------------");
+            Console.WriteLine(producte + "\t" + preuUnitari + "€\n" + quantitat[i] + "\t" + (preuUnitari * quantitat[i]) + "€");
+            Console.WriteLine("----------------------------");
+            preuTotal += preuUnitari * quantitat[i];
+        }
+        Console.WriteLine($"TOTAL: {preuTotal}");
+    }
+    public static void ToStringTiquet(int nElem, string[] productes, int[] quantitat, double[] preus)
+    {
+
+    }
+}
