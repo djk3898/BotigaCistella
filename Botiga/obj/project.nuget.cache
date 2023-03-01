@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "+gXmYg9azLG8f1na/NLvgyJm73kBqIVFXm39w7431MYrcb8nrMGxQhrrveh7IRJlaQUCrp9i6X9olV08GFtYTA==",
+  "dgSpecHash": "3OgM8lprc71MOjOL0YhXaIa3z+dEhjkdh0lT0vuFoqhVZGZQxlJ7vjwclw0Fx8o7eRoHMOhhXAQXLgFaXl3ykA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Documents\\botiga\\BotigaCistella\\Botiga\\Botiga.csproj",
+  "projectFilePath": "C:\\Users\\djunca\\source\\BotigaCistella\\Botiga\\Botiga.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\djunca\\source\\BotigaCistella\\Botiga\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

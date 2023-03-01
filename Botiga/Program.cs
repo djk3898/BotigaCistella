@@ -5,12 +5,15 @@
         //variables Botiga
         int nElementsBotiga = 1, espais = 1;
         string[] productesBotiga = new string[espais];
+        productesBotiga = new string[] {"buit"};
         double[] preus = new double[espais];
+        preus = new double[] { 1 };
 
         //variables Cistella
-        string[] productesCistella;
+        string[] productesCistella = {"buit", "buit" , "buit" , "buit" , "buit" , "buit" , "buit" , "buit" , "buit" , "buit" , "buit" , "buit" , "buit" , "buit" , "buit" , "buit" };
         int[] quantitat;
-        int nElementsCistella;
+        quantitat = new int[16];
+        int nElementsCistella = 10;
         double diners;
 
         int seleccio = -1;
@@ -53,8 +56,28 @@
                     string prodNou = Console.ReadLine();
                     ModificarProducte(producte, prodNou, productesBotiga, nElementsBotiga);
                     break;
-                case 12:
+                case 8:
                     ToString(nElementsBotiga, productesBotiga, preus);
+                    Console.WriteLine("\nPrem enter per tornat al menú");
+                    Console.ReadLine();
+                    break;
+                case 9:
+                    Console.WriteLine("COMPRAR PRODUCTE");
+                    Console.Write("Indica de quants diners disposes: ");
+                    diners = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Indica el producte: ");
+                    producte = Console.ReadLine();
+                    Console.Write("Indica la quantitat: ");
+                    int numProductes = int.Parse(Console.ReadLine());
+                    ComprarProducte(producte, numProductes, diners, productesCistella, nElementsCistella, quantitat, productesBotiga, nElementsBotiga, preus);
+                    break;
+                case 11:
+                    MostraTiquet(nElementsCistella, productesCistella, quantitat, productesBotiga, preus, nElementsBotiga);
+                    Console.WriteLine("\nPrem enter per tornat al menú");
+                    Console.ReadLine();
+                    break;
+                case 12:
+                    ToStringTiquet(nElementsCistella, productesCistella, quantitat, productesBotiga, preus, nElementsBotiga);
                     Console.WriteLine("\nPrem enter per tornat al menú");
                     Console.ReadLine();
                     break;
@@ -83,9 +106,15 @@
             Pinta("2. Ampliar Botiga", 4, 9);
             Pinta("3. Modificar Preu", 4, 10);
             Pinta("4. Modificar Producte", 4, 11);
+            Pinta("8. ToString", 4, 15);
 
-            Pinta("12. ToString", 4, 12);
-            Pinta("-1. Sortir", 4, 13);
+            Pinta("*********************", 4, 16);
+            Pinta("*      CSITELLA     *", 4, 17);
+            Pinta("*********************", 4, 18);
+            Pinta("9. Comprar Producte", 4, 19);
+            Pinta("11. Tiquet", 4, 21);
+            Pinta("12. ToString(Tiquet)", 4, 22);
+            Pinta("-1. Sortir", 4, 23);
         }
 
     }
@@ -144,14 +173,17 @@
     }
     public static void ToString(int nElem, string[] productes, double[] preus)
     {
+        string producte, total;
         Console.WriteLine("               PRODUCTES");
         for (int i = 0; i < nElem; i++)
         {
             Console.WriteLine("-----------------------------------------");
-            Console.WriteLine(productes[i] + "\t" + preus[i] + "€");
+            producte = productes[i] + "\t" + preus[i] + "€";
+            Console.WriteLine(producte);
         }
         Console.WriteLine("-----------------------------------------");
-        Console.WriteLine("TOTAL: " + nElem + "\tEspais disponibles: " + (productes.Length - nElem));
+        total = "TOTAL: " + nElem + "\tEspais disponibles: " + (productes.Length - nElem);
+        Console.WriteLine(total);
     }
     //modificar preu
     public static void ModificarPreu(string producte, double preu, string[]productes, double[]preus, int nElements)
@@ -198,5 +230,130 @@
             Thread.Sleep(3000);
         }
     }
-    public static void ordernarProducte()
-} 
+    public static void OrdernarProducte()
+    {
+
+    }
+
+    //comprova producte, espai cistella, diners
+    public static bool ComprovaProducte(string producte, string[]productes, int nElem)
+    {
+        bool trobat = false;
+        for(int i = 0; i < nElem; i++)
+        {
+            if (productes[i] == producte)
+                trobat = true;
+        }
+        return trobat;
+    }
+    public static bool ComprovaCistella(string[]cistella, int nElements) 
+    {
+        bool espai = false;
+        for (int i = 0; i < nElements; i++)
+        {
+            if (cistella[i] == "buit")
+                espai = true;
+        }
+        return espai;
+    }
+    public static bool ComprovaDiners(double diners, int quantitat, int nElements, string[]botiga, int nElemBotiga, string producte, double[]preus)
+    {
+        bool presupost = false;
+        for (int i = 0; i < nElemBotiga; i++)
+        {
+            if (botiga[i] == producte)
+            {
+                if ((preus[i] * quantitat) <= diners)
+                    presupost = true;
+            }
+        }
+        return presupost;
+    }
+    //comprar productes
+    public static void ComprarProducte(string producte, int quantitat, double diners, string[]cistella, int elementsCistella, int[]quantitatCistella, string[]botiga, int elementsBotiga, double[]preus)
+    {
+        //bool comprat = false;
+        //primer comprova que existeix el producte, que el client té espai a la cistella i per ultim que té suficients diners
+        if (ComprovaProducte(producte, botiga, elementsBotiga))
+        {
+            if (ComprovaCistella(cistella, elementsCistella))
+            {
+                if (ComprovaDiners(diners, quantitat, elementsCistella, botiga, elementsBotiga, producte, preus)) 
+                {
+                    //si els requisits es compleixen busca el primer espai buit de la cistella i afegeix el producte a comprar
+                    for (int i = 0; i < elementsCistella; i++)
+                    {
+                        if (cistella[i] == "buit")
+                        {
+                            cistella[i] = producte;
+                            quantitatCistella[i] = quantitat;
+                        }
+                    }
+                }
+                else
+                    Console.WriteLine($"No tens suficients diners.");
+            }
+            else
+                Console.WriteLine($"No tens espai a la cistella.");
+        }
+        else
+            Console.WriteLine($"No s'ha trobat {producte} a la botiga.");
+        Thread.Sleep( 1000 );
+    }
+    //mostrar tiquet
+    public static void MostraTiquet(int nElem, string[] productes, int[] quantitat, string[] productesBotiga, double[] preus, int nElemBotiga)
+    {
+        double preuUnitari = 0, preuTotal = 0.0;
+        string producte;
+
+        Console.WriteLine("                TIQUET");
+        for (int i = 0; i < nElem; i++)
+        {
+            //troba producte
+            producte = productes[i];
+            //troba preu unitari
+            for (int j = 0; j < nElemBotiga; j++)
+            {
+                if (productesBotiga[j] == producte)
+                    preuUnitari = preus[j];
+            }
+
+            Console.WriteLine("----------------------------");
+            Console.WriteLine(producte + "\t" + preuUnitari + "€\n" + quantitat[i] + "\t" + (preuUnitari * quantitat[i]) + "€");
+            Console.WriteLine("----------------------------");
+            preuTotal += preuUnitari * quantitat[i];
+        }
+        Console.WriteLine($"TOTAL: {preuTotal}");
+    }
+    public static void ToStringTiquet(int nElem, string[] productes, int[] quantitat, string[] productesBotiga, double[] preus, int nElemBotiga)
+    {
+        double preuUnitari = 0, preuTotal = 0.0;
+        string producte, quant, total;
+
+        Console.WriteLine("                TIQUET");
+        for (int i = 0; i < nElem; i++)
+        {
+            //troba producte
+            producte = productes[i];
+            //troba preu unitari
+            for (int j = 0; j < nElemBotiga; j++)
+            {
+                if (productesBotiga[j] == producte)
+                    preuUnitari = preus[j];
+            }
+            //guarda la informacio en string
+            producte += "\t" + preuUnitari + "€\n";
+            quant = quantitat[i] + "\t" + (preuUnitari * quantitat[i]) + "€";
+            //mostra per pantalla cada producte
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine(producte);
+            Console.WriteLine(quant);
+            Console.WriteLine("------------------------------------------");
+            //calcula el total
+            preuTotal += preuUnitari * quantitat[i];
+        }
+        //guarda el total en string i el mostra per pantalla
+        total = $"TOTAL: {preuTotal}";
+        Console.WriteLine(total);
+    }
+}

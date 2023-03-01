@@ -13,6 +13,7 @@ C:\Users\djunca\source\repos\BotigaCistella\Botiga\obj\Debug\net6.0\refint\Botig
 C:\Users\djunca\source\repos\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.pdb
 C:\Users\djunca\source\repos\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.genruntimeconfig.cache
 C:\Users\djunca\source\repos\BotigaCistella\Botiga\obj\Debug\net6.0\ref\Botiga.dll
+<<<<<<< HEAD
 C:\Users\PC\Documents\botiga\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.csproj.AssemblyReference.cache
 C:\Users\PC\Documents\botiga\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\PC\Documents\botiga\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.AssemblyInfoInputs.cache
@@ -21,3 +22,20 @@ C:\Users\PC\Documents\botiga\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.cspro
 C:\Users\PC\Documents\botiga\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.dll
 C:\Users\PC\Documents\botiga\BotigaCistella\Botiga\obj\Debug\net6.0\refint\Botiga.dll
 C:\Users\PC\Documents\botiga\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.pdb
+=======
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.csproj.AssemblyReference.cache
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.AssemblyInfoInputs.cache
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.AssemblyInfo.cs
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.csproj.CoreCompileInputs.cache
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.dll
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\refint\Botiga.dll
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.pdb
+C:\Users\djunca\source\BotigaCistella\Botiga\bin\Debug\net6.0\Botiga.exe
+C:\Users\djunca\source\BotigaCistella\Botiga\bin\Debug\net6.0\Botiga.deps.json
+C:\Users\djunca\source\BotigaCistella\Botiga\bin\Debug\net6.0\Botiga.runtimeconfig.json
+C:\Users\djunca\source\BotigaCistella\Botiga\bin\Debug\net6.0\Botiga.dll
+C:\Users\djunca\source\BotigaCistella\Botiga\bin\Debug\net6.0\Botiga.pdb
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\Botiga.genruntimeconfig.cache
+C:\Users\djunca\source\BotigaCistella\Botiga\obj\Debug\net6.0\ref\Botiga.dll
+>>>>>>> d46d36d92f80f2e35d1a7e9b047173163a945959
